@@ -8,7 +8,7 @@ This project depends on
 
 ## Installation
 
-Using vim-plug:
+Using [vim-plug](https://github.com/junegunn/vim-plug):
 
 ```vim
 Plug 'davidosomething/vim-enhanced-resolver', { 'do': 'npm install --global enhanced-resolve-cli' }
@@ -17,6 +17,17 @@ autocmd FileType javascript nmap <buffer> gf <Plug>(enhanced-resolver-go-cursor)
 
 This maps your `gf` to try to resolve and edit module name under the current
 vim `cWORD` (the `hyphen-word_theCursorIs./over`).
+
+## Usage
+
+This plugin provides `<Plug>` mappings for normal mode.
+
+- `<Plug>(enhanced-resolver-go-cursor)` is what you probably want to map. Use
+  `nmap` if you have other resolvers or mappings you want to fall back to.
+- `<Plug>(enhanced-resolver-echo-cursor)` will search for a quoted thing on the
+  current line and echo the result. Useful for debugging.
+- `<Plug>(enhanced-resolver-echo-resolve)` will resolve the quoted thing on
+  the current line and echo the result. Useful for debugging.
 
 ## How it works
 

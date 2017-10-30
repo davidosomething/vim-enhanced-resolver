@@ -3,17 +3,17 @@ set cpoptions&vim
 
 if !executable('enhancedresolve') | finish | endif
 
-nmap <silent><special>
-      \ <Plug>(enhanced-resolver-go-cursor)
-      \ :call enhancedresolver#GoCursor()<CR>
-
 nmap <special>
-      \ <Plug>(enhanced-resolver-get-cursor)
-      \ :call enhancedresolver#GetCursorWord()<CR>
+      \ <Plug>(enhanced-resolver-echo-resolve)
+      \ :echo enhancedresolver#Resolve()<CR>
 
 nmap <special>
       \ <Plug>(enhanced-resolver-echo-cursor)
-      \ :echomsg enhancedresolver#ResolveCursor()<CR>
+      \ :echo enhancedresolver#GetCursor()<CR>
+
+nmap <silent><special>
+      \ <Plug>(enhanced-resolver-go-cursor)
+      \ :call enhancedresolver#ResolveAndGo()<CR>
 
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
