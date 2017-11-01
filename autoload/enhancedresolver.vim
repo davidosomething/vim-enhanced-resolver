@@ -17,6 +17,7 @@ function! enhancedresolver#Resolve() abort
   let l:basepath = empty(l:basepath) ? getcwd() : l:basepath
   let l:result = substitute(system(join([
         \   'enhancedresolve',
+        \   '--suppress',
         \   '--basepath', l:basepath,
         \   l:request,
         \ ], ' ')), '\n', '', 'g')
