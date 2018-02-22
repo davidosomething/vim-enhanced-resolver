@@ -15,10 +15,12 @@ function! enhancedresolver#Resolve() abort
   let l:request = enhancedresolver#GetCursor()
   let l:basepath = expand('%:p:h')
   let l:basepath = empty(l:basepath) ? getcwd() : l:basepath
+  let l:webpackpath = empty(g:enhanced_resolver_webpack_config_path) ? 'webpack.config.js' : g:enhanced_resolver_webpack_config_path
   let l:result = substitute(system(join([
         \   'enhancedresolve',
         \   '--suppress',
         \   '--basepath', l:basepath,
+        \   '--webpackConfig', l:webpackpath,
         \   l:request,
         \ ], ' ')), '\n', '', 'g')
   return l:result
