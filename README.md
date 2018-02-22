@@ -29,6 +29,10 @@ This plugin provides `<Plug>` mappings for normal mode.
 - `<Plug>(enhanced-resolver-echo-resolve)` will resolve the quoted thing on
   the current line and echo the result. Useful for debugging.
 
+To specify a custom path to your webpack config file, add this to your vimrc:
+
+`let g:enhanced_resolver_webpack_config_path = './path_to/webpack.my.dev.js'`
+
 ## How it works
 
 `enhanced-resolve-cli` resolves the module relative to the file's directory.
